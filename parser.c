@@ -164,6 +164,10 @@ void cmd(void) {
 	}
 }
 
+
+/*
+	Verifica se o a lookahead eh fim de arquivo (EOF) ou se lookahead eh os comandos EXIT ou QUIT
+*/
 void end(void) {
 	switch(lookahead) {
 		case EOF:
@@ -178,6 +182,9 @@ void end(void) {
 	}
 }
 
+/*
+	Chamada principal do programa
+*/
 void mybc(void) {
 	cmd();
 	
