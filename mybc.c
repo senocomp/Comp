@@ -19,8 +19,7 @@ int main(int argc, char const *argv[]) {
 		default:
 			if (source == NULL) {
 				fprintf (stderr, 
-					"argv[1]: cannot open... exiting with error status\n", 
-					argv[1]);
+					"argv[1]: cannot open... exiting with error status\n");
 				exit (-1);
 			}
 	}
