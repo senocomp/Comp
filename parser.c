@@ -107,6 +107,9 @@ double F(void) {
 			match(')');
 			break;
 		case UINT:
+			F_val = atof(lexeme);
+			match(lookahead);
+			break;
 		case FLOAT:
 			F_val = atof(lexeme);
 			match(lookahead);
@@ -142,6 +145,8 @@ void cmd(void) {
 		case EOF:
 			break;
 		case QUIT:
+			exit(0);
+			break;
 		case EXIT:
 			exit(0);
 			break;
