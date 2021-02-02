@@ -1,5 +1,5 @@
 /********************************************************************************************
-* Parser.h: contem o prototipo das funcoes				    *
+* Parser.c: contem funcoes utilizadas na analise sintatica		    		    *
 * Grupo 07: Caroline Mafra, Thais Caliman e Cristian Castro                                 *
 *                                                                                           *
 *********************************************************************************************/
