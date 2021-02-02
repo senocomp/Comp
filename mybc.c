@@ -1,7 +1,14 @@
+/********************************************************************************************
+* MyBc.c: Chamada principal do programa que recebe as informações passadas pelo usuário e as*
+* processa, retornando o resultado de acordo com o processamento nas demais funções.        *
+* Grupo 07: Caroline Mafra, Thais Caliman e Cristian Castro                                 *
+*********************************************************************************************/
+
 #include<stdio.h>
 #include<stdlib.h>
 #include<tokens.h>
 
+// Declarações
 void mybc(void);
 
 int gettoken(FILE *);
@@ -9,6 +16,7 @@ int gettoken(FILE *);
 int lookahead;
 FILE *source;
 
+// Função principal
 int main(int argc, char const *argv[]) {
 	source = fopen (argv[1], "r");
 
