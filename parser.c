@@ -74,6 +74,7 @@ double recall(const char *name) {
 	return 0;
 }
 
+
 void store(const char *name, double val) {
 	int i;
 	
@@ -96,6 +97,9 @@ double convert(const char * str_convert, int tipo_dado) {
 		return (double) strtol(str_convert, NULL, 8);
 }
 
+/*
+  Funcao responsavel pelas derivacoes dos fatores
+*/
 double F(void) {
 	double F_val;
 	char name[MAXIDLEN + 1];
@@ -200,6 +204,9 @@ void mybc(void) {
 	end();
 }
 
+/*
+	Verifica se lookahead eh igual a variavel passada pela funcao, caso nao seja, retorna uma mensagem de erro. 
+*/
 void match(int expected) {
 	if (lookahead == expected) {
 		lookahead = gettoken(source);
