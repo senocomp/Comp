@@ -62,6 +62,9 @@ SYMTAB symtab[MAXSTBENTRIES];
 
 int symtab_nextentry = 0;
 
+/*
+ Verifica, compara e retorna se o simbolo passado na variavel name estah presente na tabela de simbolos
+*/
 double recall(const char *name) {
 	int i;
 	
@@ -74,7 +77,9 @@ double recall(const char *name) {
 	return 0;
 }
 
-
+/*
+  Salva o conteudo da variavel na tabela de simbolos
+*/
 void store(const char *name, double val) {
 	int i;
 	
