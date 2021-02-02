@@ -1,9 +1,17 @@
+/********************************************************************************************
+* Parser.h: contem o prototipo das funcoes				    *
+* Grupo 07: Caroline Mafra, Thais Caliman e Cristian Castro                                 *
+*                                                                                           *
+*********************************************************************************************/
+
+
 #include<parser.h>
 #include<string.h>
 #include<constants.h>
 #include<keywords.h>
 
-/* E -> ['+''-'] T { (1a) (+) T (1) } */
+/* Funcao que deriva as expressoes
+ E -> ['+''-'] T { (1a) (+) T (1) } */
 double E(void) {
 	int signal = 0;
 	double E_val, T_val;
@@ -32,7 +40,8 @@ double E(void) {
 	return E_val;
 }
 
-/* T -> F { (2a) (*) F (2) } */
+/* Funcao que deriva as termos
+ T -> F { (2a) (*) F (2) } */
 double T(void) { 
 	double T_val, F_val;
 	
@@ -53,13 +62,19 @@ double T(void) {
 
 double memory[MAXSTBENTRIES];
 
+/*
+  Struct que guarda nome e posicao do simbolo
+*/
 typedef struct _symtab_ {
 	char name[MAXIDLEN + 1];
 	int pos;
 } SYMTAB;
 
+//tabela de simbolos
 SYMTAB symtab[MAXSTBENTRIES];
 
+
+//posicao inicial do simbolo
 int symtab_nextentry = 0;
 
 /*
@@ -95,6 +110,9 @@ void store(const char *name, double val) {
 	memory[i] = val;
 }
 
+/*
+  Conversao de HEXA e OCTA para float
+*/
 double convert(const char * str_convert, int tipo_dado) {
 	if (tipo_dado == 0) // HEXADECIMAL
 		return (double) strtol(str_convert, NULL, 0);
@@ -145,6 +163,9 @@ double F(void) {
 	return F_val;
 }
 
+/*
+  Verificador de tipos e expressões
+*/
 void cmd(void) {
 	double E_val;
 	
@@ -175,7 +196,7 @@ void cmd(void) {
 
 
 /*
-	Verifica se o a lookahead eh fim de arquivo (EOF) ou se lookahead eh os comandos EXIT ou QUIT
+  Verifica se o a lookahead eh fim de arquivo (EOF) ou se lookahead eh os comandos EXIT ou QUIT
 */
 void end(void) {
 	switch(lookahead) {
@@ -192,7 +213,7 @@ void end(void) {
 }
 
 /*
-	Chamada principal do programa
+  Chamada principal do programa
 */
 void mybc(void) {
 	cmd();
@@ -210,7 +231,7 @@ void mybc(void) {
 }
 
 /*
-	Verifica se lookahead eh igual a variavel passada pela funcao, caso nao seja, retorna uma mensagem de erro. 
+  Verifica se lookahead eh igual a variavel passada pela funcao, caso nao seja, retorna uma mensagem de erro. 
 */
 void match(int expected) {
 	if (lookahead == expected) {
