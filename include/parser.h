@@ -9,11 +9,8 @@
 #include<tokens.h>
 #include<constants.h>
 
-<<<<<<< HEAD
-=======
 extern char lexeme[MAXIDLEN + 1];
 
->>>>>>> 48d07ccbc9cc981ea452f1ccd10ea8e3179ab90e
 double E(void);
 double T(void);
 double F(void);
