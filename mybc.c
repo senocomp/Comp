@@ -4,6 +4,7 @@
 * Grupo 07: Caroline Mafra, Thais Caliman e Cristian Castro                                 *
 *********************************************************************************************/
 
+#include<parser.h>
 #include<stdio.h>
 #include<stdlib.h>
 #include<tokens.h>
@@ -12,9 +13,6 @@
 void mybc(void);
 
 int gettoken(FILE *);
-
-int lookahead;
-FILE *source;
 
 // Função principal
 int main(int argc, char const *argv[]) {
