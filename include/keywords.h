@@ -1,5 +1,5 @@
 /********************************************************************************************
-* keywords.h: Contém as definições de palavras chaves                                       *
+* keywords.h: Contém as definições de palavras chaves e o prototipo da função iskeyword     *
 * Grupo 07: Caroline Mafra, Thais Caliman e Cristian Castro                                 *
 *                                                                                           *
 *********************************************************************************************/
