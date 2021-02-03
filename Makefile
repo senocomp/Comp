@@ -13,10 +13,10 @@ CFLAGS=-g -I./include
 mybc: mybc.o lexer.o parser.o keywords.o
 	$(CC) -o $@ $^ -lm	# a flag -lm possibilita o uso de math.h
 
-# comando para excluir todos os arquivos .o gerados na compilação
+
+# comandos para exclusão de arquivos:
 clean:
 	$(RM) *.o
-
 
 mostlyclean: clean
 	$(RM) *~
