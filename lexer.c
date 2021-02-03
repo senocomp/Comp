@@ -7,13 +7,13 @@
 #include<stdlib.h>
 #include<ctype.h>
 #include<math.h>
+#include<parser.h>
 #include<tokens.h>
 #include<keywords.h>
 #include<constants.h>
 
 // Declaração variáveis
 int decimal = 0;
-char lexeme[MAXIDLEN + 1];
 
 // Função que verifica se é um identificador
 int isID(FILE *tape) {
