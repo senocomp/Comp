@@ -9,7 +9,7 @@
 #include<tokens.h>
 #include<constants.h>
 
-extern char lexeme[];
+extern char lexeme[MAXIDLEN + 1];
 
 double E(void);
 double T(void);
