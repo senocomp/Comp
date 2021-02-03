@@ -7,18 +7,11 @@
 #include<stdlib.h>
 #include<ctype.h>
 #include<math.h>
-#include<parser.h>
 #include<tokens.h>
 #include<keywords.h>
 #include<constants.h>
 #include<lexer.h>
 
-<<<<<<< HEAD
-=======
-// Declaração variáveis
-int decimal = 0;
-
->>>>>>> 48d07ccbc9cc981ea452f1ccd10ea8e3179ab90e
 // Função que verifica se é um identificador
 int isID(FILE *tape) {
 	int i = 0;
