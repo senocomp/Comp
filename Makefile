@@ -7,7 +7,7 @@
 # CFLAGS é a variavel que adiciona argumentos ao compilador
 # argumentos:
 	# -g : Gera mais informações da tabela de símbolos para o debugger.
-	# -I./include : Adiciona a pasta include ao processo de linkedição
+	# -I./include : Adiciona os arquivos da pasta include ao processo de linkedição
 CFLAGS=-g -I./include
 
 mybc: mybc.o lexer.o parser.o keywords.o
