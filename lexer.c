@@ -1,3 +1,8 @@
+/********************************************************************************************
+* Lexer.c: Analisador Léxico								    *
+* Grupo 07: Caroline Mafra, Thais Caliman e Cristian Castro                                 *
+*                                                                                           *
+*********************************************************************************************/
 #include<stdio.h>
 #include<stdlib.h>
 #include<ctype.h>
@@ -5,10 +10,9 @@
 #include<tokens.h>
 #include<keywords.h>
 #include<constants.h>
+#include<lexer.h>
 
-int decimal = 0;
-char lexeme[MAXIDLEN + 1];
-
+// Função que verifica se é um identificador
 int isID(FILE *tape) {
 	int i = 0;
 
@@ -32,6 +36,7 @@ int isID(FILE *tape) {
 	return 0;
 }
 
+// Função que verifica os inteiros
 int isUINT(FILE *tape) {
 	int i = 0;
 	
@@ -56,6 +61,7 @@ int isUINT(FILE *tape) {
 	return 0;
 }
 
+// Função que verifica os númericos
 int isNUM(FILE *tape) {
 	int token = 0, i = 0;
 	int head;
@@ -133,6 +139,7 @@ int isNUM(FILE *tape) {
 	return token;
 }
 
+// Função que verifica os OCTAS
 int isOCT(FILE *tape) {
 	int i = 0;
 	
@@ -155,6 +162,7 @@ int isOCT(FILE *tape) {
 	return 0;
 }
 
+// Função que verifica os HEXAS
 int isHEX(FILE *tape) {
 	int x;
 	int i = 0;
@@ -187,6 +195,7 @@ int isHEX(FILE *tape) {
 	return 0;
 }
 
+// Verifica e pula os espaços
 void skipspaces(FILE *tape) {
     int head;
     
@@ -197,6 +206,7 @@ void skipspaces(FILE *tape) {
     ungetc(head, tape);
 }
 
+// Função responsável por pegar o token e chamar as demais funções
 int gettoken(FILE *source) {
 	int token;
 	

@@ -1,13 +1,12 @@
 /********************************************************************************************
-* keywords.h: Contém as definições de palavras chaves                                       *
+* Parser.h                                                                                  *
 * Grupo 07: Caroline Mafra, Thais Caliman e Cristian Castro                                 *
 *                                                                                           *
 *********************************************************************************************/
 
+//Declarações
+void mybc(void);
+int gettoken(FILE *);
 
-enum {
-    QUIT = 10001,
-    EXIT
-};
-
-int iskeyword(const char *);
+int lookahead;
+FILE *source;

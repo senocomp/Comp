@@ -1,9 +1,16 @@
+/********************************************************************************************
+* Parser.c: contem funcoes utilizadas na analise sintatica		    		    *
+* Grupo 07: Caroline Mafra, Thais Caliman e Cristian Castro                                 *
+*                                                                                           *
+*********************************************************************************************/
+
 #include<parser.h>
 #include<string.h>
 #include<constants.h>
 #include<keywords.h>
 
-/* E -> ['+''-'] T { (1a) (+) T (1) } */
+/* Funcao que deriva as expressoes
+ E -> ['+''-'] T { (1a) (+) T (1) } */
 double E(void) {
 	int signal = 0;
 	double E_val, T_val;
@@ -32,7 +39,8 @@ double E(void) {
 	return E_val;
 }
 
-/* T -> F { (2a) (*) F (2) } */
+/* Funcao que deriva as termos
+ T -> F { (2a) (*) F (2) } */
 double T(void) { 
 	double T_val, F_val;
 	
@@ -51,17 +59,9 @@ double T(void) {
 	return T_val;
 }
 
-double memory[MAXSTBENTRIES];
-
-typedef struct _symtab_ {
-	char name[MAXIDLEN + 1];
-	int pos;
-} SYMTAB;
-
-SYMTAB symtab[MAXSTBENTRIES];
-
-int symtab_nextentry = 0;
-
+/*
+ Verifica, compara e retorna se o simbolo passado na variavel name estah presente na tabela de simbolos
+*/
 double recall(const char *name) {
 	int i;
 	
@@ -74,6 +74,9 @@ double recall(const char *name) {
 	return 0;
 }
 
+/*
+  Salva o conteudo da variavel na tabela de simbolos
+*/
 void store(const char *name, double val) {
 	int i;
 	
@@ -89,6 +92,9 @@ void store(const char *name, double val) {
 	memory[i] = val;
 }
 
+/*
+  Conversao de HEXA e OCTA para float
+*/
 double convert(const char * str_convert, int tipo_dado) {
 	if (tipo_dado == 0) // HEXADECIMAL
 		return (double) strtol(str_convert, NULL, 0);
@@ -96,6 +102,9 @@ double convert(const char * str_convert, int tipo_dado) {
 		return (double) strtol(str_convert, NULL, 8);
 }
 
+/*
+  Funcao responsavel pelas derivacoes dos fatores
+*/
 double F(void) {
 	double F_val;
 	char name[MAXIDLEN + 1];
@@ -136,6 +145,9 @@ double F(void) {
 	return F_val;
 }
 
+/*
+  Verificador de tipos e expressões
+*/
 void cmd(void) {
 	double E_val;
 	
@@ -164,6 +176,10 @@ void cmd(void) {
 	}
 }
 
+
+/*
+  Verifica se o a lookahead eh fim de arquivo (EOF) ou se lookahead eh os comandos EXIT ou QUIT
+*/
 void end(void) {
 	switch(lookahead) {
 		case EOF:
@@ -178,6 +194,9 @@ void end(void) {
 	}
 }
 
+/*
+  Chamada principal do programa
+*/
 void mybc(void) {
 	cmd();
 	
@@ -193,6 +212,9 @@ void mybc(void) {
 	end();
 }
 
+/*
+  Verifica se lookahead eh igual a variavel passada pela funcao, caso nao seja, retorna uma mensagem de erro. 
+*/
 void match(int expected) {
 	if (lookahead == expected) {
 		lookahead = gettoken(source);

@@ -1,7 +1,8 @@
-/**@<tokens.h>::**/
-// #define ID 1024
-// #define UINT 1025
-
+/********************************************************************************************
+* Tokens.h: Declaração dos tipos de entrada						    *
+* Grupo 07: Caroline Mafra, Thais Caliman e Cristian Castro                                 *
+*                                                                                           *
+*********************************************************************************************/
 enum {
 	ID = 1024,
 	UINT,

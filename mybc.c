@@ -1,14 +1,15 @@
+/********************************************************************************************
+* MyBc.c: Chamada principal do programa que recebe as informações passadas pelo usuário e as*
+* processa, retornando o resultado de acordo com o processamento nas demais funções.        *
+* Grupo 07: Caroline Mafra, Thais Caliman e Cristian Castro                                 *
+*********************************************************************************************/
+
 #include<stdio.h>
 #include<stdlib.h>
 #include<tokens.h>
+#include<mybc.h>
 
-void mybc(void);
-
-int gettoken(FILE *);
-
-int lookahead;
-FILE *source;
-
+// Função principal
 int main(int argc, char const *argv[]) {
 	source = fopen (argv[1], "r");
 
@@ -19,8 +20,7 @@ int main(int argc, char const *argv[]) {
 		default:
 			if (source == NULL) {
 				fprintf (stderr, 
-					"argv[1]: cannot open... exiting with error status\n", 
-					argv[1]);
+					"argv[1]: cannot open... exiting with error status\n");
 				exit (-1);
 			}
 	}
