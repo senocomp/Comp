@@ -4,11 +4,23 @@
 * Grupo 07: Caroline Mafra, Thais Caliman e Cristian Castro                                 *
 *********************************************************************************************/
 
+<<<<<<< HEAD
+=======
+#include<parser.h>
+>>>>>>> 48d07ccbc9cc981ea452f1ccd10ea8e3179ab90e
 #include<stdio.h>
 #include<stdlib.h>
 #include<tokens.h>
 #include<mybc.h>
 
+<<<<<<< HEAD
+=======
+// Declarações
+void mybc(void);
+
+int gettoken(FILE *);
+
+>>>>>>> 48d07ccbc9cc981ea452f1ccd10ea8e3179ab90e
 // Função principal
 int main(int argc, char const *argv[]) {
 	source = fopen (argv[1], "r");

@@ -4,6 +4,10 @@
 *                                                                                           *
 *********************************************************************************************/
 
+<<<<<<< HEAD
+=======
+#include<tokens.h>
+>>>>>>> 48d07ccbc9cc981ea452f1ccd10ea8e3179ab90e
 #include<parser.h>
 #include<string.h>
 #include<constants.h>
@@ -59,6 +63,26 @@ double T(void) {
 	return T_val;
 }
 
+<<<<<<< HEAD
+=======
+double memory[MAXSTBENTRIES];
+
+/*
+  Struct que guarda nome e posicao do simbolo
+*/
+typedef struct _symtab_ {
+	char name[MAXIDLEN + 1];
+	int pos;
+} SYMTAB;
+
+//tabela de simbolos
+SYMTAB symtab[MAXSTBENTRIES];
+
+
+//posicao inicial do simbolo
+int symtab_nextentry = 0;
+
+>>>>>>> 48d07ccbc9cc981ea452f1ccd10ea8e3179ab90e
 /*
  Verifica, compara e retorna se o simbolo passado na variavel name estah presente na tabela de simbolos
 */
