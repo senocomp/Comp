@@ -1,5 +1,6 @@
 /********************************************************************************************
-* Parser.h                                                                                  *
+* Parser.h: Contém declaração variaveis, prototipos de funçoes, o tipo SYMTAB e a indicação *
+* de variaveis externas.                                                                    *
 * Grupo 07: Caroline Mafra, Thais Caliman e Cristian Castro                                 *
 *                                                                                           *
 *********************************************************************************************/
@@ -9,15 +10,15 @@
 #include<tokens.h>
 #include<constants.h>
 
-extern char lexeme[MAXIDLEN + 1];
-
+//Prototipo das funções
 double E(void);
 double T(void);
 double F(void);
 void match(int expected);
 int gettoken(FILE *);
 
-extern char lexeme[];
+// Variaveis externas
+extern char lexeme[MAXIDLEN + 1];
 extern int lookahead;
 extern FILE *source;
 
@@ -33,5 +34,5 @@ typedef struct _symtab_ {
 SYMTAB symtab[MAXSTBENTRIES];
 double memory[MAXSTBENTRIES];
 
-//posicao inicial do simbolo
+//posicao inicial do simbolo:
 int symtab_nextentry = 0;
